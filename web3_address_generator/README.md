@@ -1,5 +1,5 @@
 
-# Ethereum New Address Generator
+# Ethereum Fancy Address Generator
 
 This script generates an Ethereum new address with specified start and/or end. It also supports generating the address using a seed phrase.
 
@@ -79,7 +79,7 @@ The Ethereum address generator allows you to create one or more Ethereum address
 - **Default**: `12`
 - **Example**:
   ```bash
-  --number-of-seed-phrase-words 15
+  --number-of-seed-phrase-words 12
   ```
 ---
 
@@ -99,19 +99,6 @@ Here is a concise Markdown document that explains the functionality of your Pyth
 
 This script automates the generation of Ethereum addresses with optional start and end substrings, and optionally includes a seed phrase for enhanced security.
 
-### Features
-- **Address Customization**: Generate Ethereum addresses that begin or end with specified substrings.
-- **Seed Phrase Generation**: Option to generate a seed phrase for each address.
-- **Flexible Output**: Displays the Ethereum address, its private key, and, if generated, the seed phrase.
-
-### Usage
-
-1. **Starting Substrings**: Define one or more substrings with which the Ethereum addresses should start.
-2. **Ending Substrings**: Define one or more substrings with which the Ethereum addresses should end.
-3. **Number of Addresses**: Specify the number of addresses to generate.
-4. **Seed Phrase**: Optionally enable the generation of a seed phrase for each address.
-5. **Seed Phrase Words**: Define the number of words in the seed phrase (default is 12).
-
 ### Functions
 
 - **`preprocess_address_starts(starts)`**: Processes the starting substrings by removing '0x' and converting to lowercase.
@@ -123,27 +110,24 @@ This script automates the generation of Ethereum addresses with optional start a
 - **`prepare_generation_job(ends, number_of_addresses, number_of_seed_phrase_words, starts, use_seed_phrase)`**: Prepares and validates the parameters for the generation job.
 - **`generate_address(number_of_addresses, starts, ends, use_seed_phrase, number_of_seed_phrase_words)`**: Coordinates the preparation and execution of the address generation.
 
-### Command-Line Arguments
-
-```plaintext
---address-start [STARTS...]     Specify starting substrings for the Ethereum addresses.
---address-end [ENDS...]         Specify ending substrings for the Ethereum addresses.
---number-of-addresses N         Specify the number of Ethereum addresses to generate.
---use-seed-phrase               Enable seed phrase generation for added security.
---number-of-seed-phrase-words N Specify the number of words in the seed phrase (default 12).
-```
-
 ### Example Command
+From the same directory where `web3_address_generator.py` is located run: 
 
 ```bash
-python script.py --address-start 1a3 1b4 --address-end abc def --number-of-addresses 5 --use-seed-phrase --number-of-seed-phrase-words 24
+python web3_address_generator.py --address-start 1a3 1b4 --address-end abc def --number-of-addresses 5 --use-seed-phrase --number-of-seed-phrase-words 24
 ```
 
 This command will generate 5 Ethereum addresses that start with '1a3' or '1b4', end with 'abc' or 'def', each with a 24-word seed phrase.
 
 ---
 
-This document provides an overview and detailed instructions for users to effectively utilize your Ethereum address generation script.
+## Google Collab
+
+If you trust Google enough - you may run this script in the Google collab, but I would not advise to do so. 
+
+[Google Collab Notebook](https://colab.research.google.com/drive/1TAZZvmnSMD67SfLfRiCChCBJgVnMMX7c?usp=sharing)
+
+---
 ## Code
 
 Here is the full script [web3_address_generator.py](web3_address_generator.py)
